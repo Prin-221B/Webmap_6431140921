@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Creating Maps with Leaflet</title>
+<link rel="stylesheet" href=https://unpkg.com/leaflet@1.9.3/dist/leaflet.css 
+integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
+<script src=https://unpkg.com/leaflet@1.9.3/dist/leaflet.js 
+integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+</head>
+<body>
+<div id="map" style="height: 600px"></div>
+<script>
+var map = L.map('map').setView([13.7563, 100.5018], 12);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+var Icon1 = L.icon({
+iconUrl : 'shopping-cart.png',
+iconsize: [5,5],
+iconAnchor:[45,45],
+popupAnchor:[0,-39]
+})
+
+var Icon2 = L.icon({
+iconUrl : 'graduation-cap.png',
+iconsize: [15,15],
+iconAnchor:[45,45],
+popupAnchor:[0,-39]
+})
+
+var Icon3 = L.icon({
+iconUrl : 'mug-hot-alt.png',
+iconsize: [15,15],
+iconAnchor:[45,45],
+popupAnchor:[0,-39]
+})
+var Icon4 = L.icon({
+iconUrl : 'camera.png',
+iconsize: [15,15],
+iconAnchor:[45,45],
+popupAnchor:[0,-39]
+})
+
+var marker = L.marker([13.73842,100.53168],{icon:Icon2}).addTo(map).bindPopup("<b>Chulalongkorn</b><br>254 ถ. พญาไท แขวงวังใหม่ เขตปทุมวัน กรุงเทพมหานคร 10330<br>")
+var marker = L.marker([13.74678,100.53498],{icon:Icon1}).addTo(map).bindPopup("<b>Siam Paragon</b><br>991/1 ถ. พระรามที่ 1 แขวงปทุมวัน เขตปทุมวัน กรุงเทพมหานคร 10330<br>")
+var marker = L.marker([13.72670,100.51044],{icon:Icon1}).addTo(map).bindPopup("<b>Iconsiam</b><br>299 ถ. เจริญนคร แขวงคลองต้นไทร เขตคลองสาน กรุงเทพมหานคร 10600<br>")
+var marker = L.marker([13.74640,100.53911],{icon:Icon1}).addTo(map).bindPopup("<b>Central World</b><br>999/9 ถ. พระรามที่ 1 แขวงปทุมวัน เขตปทุมวัน กรุงเทพมหานคร 10330<br>")
+var marker = L.marker([13.71923,100.52268],{icon:Icon3}).addTo(map).bindPopup("<b>Roots at Sathorn</b><br>33/31 Bhiraj Tower at Sathon, Unit No. A.1.2 1st Floor ถ. สาทรใต้ แขวงยานนาวา เขตสาทร กรุงเทพมหานคร 10120<br>")
+var marker = L.marker([13.74215,100.50716],{icon:Icon4}).addTo(map).bindPopup("<b>Yaowarat</b><br>ถนนเยาวราช<br>")
+
+</script>
+</body>
+</html>
